@@ -4,5 +4,5 @@ deployment:
     - export DEPLOYPATH=/home4/gilpilco/public_html/
     - /bin/cp dist/gilpilweb/* $DEPLOYPATH
 
-    - export DEPLOYPATH1=/home4/gilpilco/public_html/assets/
-    - /bin/cp dist/gilpilweb/assets/* $DEPLOYPATH1
+    - export DEPLOYPATH=/home4/gilpilco/public_html/assets/
+    - /bin/cp dist/gilpilweb/assets/* $DEPLOYPATH
