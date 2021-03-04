@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home4/gilpilco/public_html/
+    - export DEPLOYPATH_ASSETS=/home4/gilpilco/public_html/assets
     - /bin/cp dist/gilpilweb/* $DEPLOYPATH
+    - /bin/cp dist/gilpilweb/assets/* $DEPLOYPATH_ASSETS
