@@ -1,0 +1,14 @@
+
+# to install the hammerjs
+npm install --save hammerjs
+
+# to add angualr material
+ng add @angular/material
+
+# to install flex layout
+
+npm i @angular/flex-layout --save
+
+# to create the service under services folder
+
+ng g s services/signupservice
