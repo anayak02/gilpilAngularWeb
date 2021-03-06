@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   providedIn: 'root'
 })
 export class UserServiceService {
-   apiURL = " http://localhost:3000/app/user"
+   apiURL = "https://www.gilpil.com/app/user"
   constructor(private httpClient: HttpClient) { }
 
   public getAllUserDetails():Observable<Object>{
