@@ -13,8 +13,7 @@ export class UserDetailsComponent implements OnInit {
    }
 
   usersList:Array<any>=[]; 
-
-  name:string="arjun";
+ 
 
   ngOnInit() {
     this.getAllUserDetails();

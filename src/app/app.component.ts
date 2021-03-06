@@ -9,7 +9,9 @@ import { ResponsiveService } from './responsive.service';
 export class AppComponent implements OnInit{
   title = 'gilpilweb';
   
-  constructor(private responsiveService:ResponsiveService){}
+  constructor(private responsiveService:ResponsiveService){
+
+  }
 
   ngOnInit(): void {
     this.drawWaterMark();

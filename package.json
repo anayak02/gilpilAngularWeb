@@ -6,7 +6,7 @@
     "start-springboot": "ng serve --proxy-config proxy.conf.json",
     "start": "ng serve",
     "build": "ng build --aot=false --buildOptimizer=false --deleteOutputPath=true",
-    "build:prod": "ng build --prod --aot=false --buildOptimizer=false --deleteOutputPath=true",
+    "build:prod": "ng build --prod --configuration=production --aot=false --buildOptimizer=false --deleteOutputPath=true",
     "build:tomcat:root": "ng build  --aot=false --buildOptimizer=false --deleteOutputPath=true",
     "test": "ng test",
     "lint": "ng lint",
