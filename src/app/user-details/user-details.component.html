@@ -1,6 +1,5 @@
 <div>User Details</div>
 
-
 <table>
     <thead>
         <th>Email</th>
@@ -8,10 +7,10 @@
         <th>Created Date</th>
     </thead>
     <tbody>
-        <tr *ngFor="let user of usersList">
-            <td>{{user.EMAIL}}</td>
-            <td>{{user.MOBILE_NUMBER}}</td>
-            <td>{{user.CREATED_DATE}}</td>
+        <tr *ngFor="let user of usersList;">
+            <td>{{user.email}}</td>
+            <td>{{user.mobile_number}}</td>
+            <td>{{user.created_date}}</td>
         </tr>
     </tbody>
 </table>
