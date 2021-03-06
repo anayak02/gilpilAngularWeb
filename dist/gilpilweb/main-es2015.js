@@ -88,6 +88,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/user-details/user-details.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/user-details/user-details.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div>User Details</div>\r\n\r\n\r\n<table>\r\n    <thead>\r\n        <th>Email</th>\r\n        <th>Mobile No</th>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let user of usersList\">\r\n            <td>{{user.EMAIL}}</td>\r\n            <td>{{user.MOBILE_NUMBER}}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/welcome/welcome.component.html":
 /*!**************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/welcome/welcome.component.html ***!
@@ -97,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<!-- Code Section For Desktop Device-->\r\n<div *ngIf=\"!isMobile\">\r\n    Desktop..........\r\n  \r\n</div>\r\n\r\n<!-- Code Section for Mobile Device -->\r\n<div *ngIf=\"isMobile\">\r\n    Mobile device.....\r\n</div>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<!-- Code Section For Desktop Device-->\r\n<div *ngIf=\"!isMobile\">\r\n    <!-- Desktop.......... -->\r\n\r\n    <app-user-details></app-user-details>\r\n    \r\n</div>\r\n\r\n<!-- Code Section for Mobile Device -->\r\n<div *ngIf=\"isMobile\">\r\n    <!-- Mobile device..... -->\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -498,6 +511,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./welcome/welcome.component */ "./src/app/welcome/welcome.component.ts");
 /* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./material.module */ "./src/app/material.module.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _services_user_service_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/user-service.service */ "./src/app/services/user-service.service.ts");
+/* harmony import */ var _user_details_user_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user-details/user-details.component */ "./src/app/user-details/user-details.component.ts");
+
+
 
 
 
@@ -524,7 +541,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
             _auth_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
             _auth_signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"],
-            _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_12__["WelcomeComponent"]
+            _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_12__["WelcomeComponent"],
+            _user_details_user_details_component__WEBPACK_IMPORTED_MODULE_16__["UserDetailsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -535,7 +553,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
         ],
-        providers: [],
+        providers: [_services_user_service_service__WEBPACK_IMPORTED_MODULE_15__["UserServiceService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
         schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
     })
@@ -899,6 +917,104 @@ SignupserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/services/user-service.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/user-service.service.ts ***!
+  \**************************************************/
+/*! exports provided: UserServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserServiceService", function() { return UserServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+let UserServiceService = class UserServiceService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.apiURL = " http://localhost:3000/app/user";
+    }
+    getAllUserDetails() {
+        return this.httpClient.get(`${this.apiURL}/getAllUserDetails`);
+    }
+};
+UserServiceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+UserServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], UserServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/user-details/user-details.component.scss":
+/*!**********************************************************!*\
+  !*** ./src/app/user-details/user-details.component.scss ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItZGV0YWlscy91c2VyLWRldGFpbHMuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/user-details/user-details.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/user-details/user-details.component.ts ***!
+  \********************************************************/
+/*! exports provided: UserDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserDetailsComponent", function() { return UserDetailsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_user_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user-service.service */ "./src/app/services/user-service.service.ts");
+
+
+
+let UserDetailsComponent = class UserDetailsComponent {
+    constructor(userService) {
+        this.userService = userService;
+        this.usersList = [];
+        this.name = "arjun";
+    }
+    ngOnInit() {
+        this.getAllUserDetails();
+    }
+    getAllUserDetails() {
+        this.userService.getAllUserDetails().subscribe((data) => {
+            this.usersList = Array.from(data.rows);
+            console.log(this.usersList);
+        });
+    }
+};
+UserDetailsComponent.ctorParameters = () => [
+    { type: _services_user_service_service__WEBPACK_IMPORTED_MODULE_2__["UserServiceService"] }
+];
+UserDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user-details',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/user-details/user-details.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-details.component.scss */ "./src/app/user-details/user-details.component.scss")).default]
+    })
+], UserDetailsComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/welcome/welcome.component.scss":
 /*!************************************************!*\
   !*** ./src/app/welcome/welcome.component.scss ***!
@@ -973,16 +1089,10 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: false
+    production: true,
+    apiUrl: 'http://localhost:4200',
+    enableDebug: true
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
