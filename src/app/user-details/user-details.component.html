@@ -5,11 +5,13 @@
     <thead>
         <th>Email</th>
         <th>Mobile No</th>
+        <th>Created Date</th>
     </thead>
     <tbody>
         <tr *ngFor="let user of usersList">
             <td>{{user.EMAIL}}</td>
             <td>{{user.MOBILE_NUMBER}}</td>
+            <td>{{user.CREATED_DATE}}</td>
         </tr>
     </tbody>
 </table>
