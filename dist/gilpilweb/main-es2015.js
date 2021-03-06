@@ -1090,7 +1090,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: true,
-    apiUrl: 'http://localhost:4200',
+    apiUrl: '',
     enableDebug: true
 };
 
