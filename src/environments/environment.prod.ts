@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl:'https://www.gilpil.com',
+  apiUrl:'https://www.gil4pil.com',
   enableDebug:true
 };
