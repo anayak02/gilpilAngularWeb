@@ -1,0 +1,7 @@
+-------------------------------------------------
+> ng g c userDetails --spec=false --module app
+
+- to generate component and automaticaly add in to the app.moudle.js file
+- if you dont want to generat the test file just specify --spec
+
+----------------------------------------------

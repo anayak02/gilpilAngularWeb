@@ -14,6 +14,8 @@ import { MaterialModule } from './material.module';
 import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { UserServiceService } from './services/user-service.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 
@@ -24,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    UserDetailsComponent
   ],
   imports: [
     
@@ -38,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     
     
   ],
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
