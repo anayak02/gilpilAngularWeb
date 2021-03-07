@@ -7,7 +7,7 @@ import { UserServiceService } from '../services/user-service.service';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
-
+  loading = false;
   constructor(private userService:UserServiceService) {
 
    }
@@ -16,6 +16,7 @@ export class UserDetailsComponent implements OnInit {
  
 
   ngOnInit() {
+    this.loading = true;
     this.getAllUserDetails();
   }
 
@@ -25,6 +26,7 @@ export class UserDetailsComponent implements OnInit {
 
       this.usersList = Array.from(data.rows);
       console.log(this.usersList);
+      this.loading = true;
     })
   }
 
