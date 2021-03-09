@@ -1,13 +1,3 @@
-
-<div (window:resize)="onResize($event)">
-      <!-- Heder Menu -->
-      <mat-card>
-        <a mat-fab routerLink="/">Home</a>
-        <a mat-fab routerLink="/login">Login</a>
-        <a mat-fab routerLink="/signup">signup</a>
-    </mat-card>
-
-    <router-outlet></router-outlet>
-</div>
-
-
+<router-outlet>
+  <app-spinner></app-spinner>
+</router-outlet>

@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'gilpilweb'`, () => {
+  it(`should have as title 'able-pro-v8.2.0'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('gilpilweb');
+    expect(app.title).toEqual('able-pro-v8.2.0');
   });
 
-  it('should render title', () => {
+  it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('gilpilweb app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to able-pro-v8.2.0!');
   });
 });
