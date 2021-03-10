@@ -1,62 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './theme/shared/shared.module';
-
 import { AppComponent } from './app.component';
-import { AdminComponent } from './theme/layout/admin/admin.component';
-import { AuthComponent } from './theme/layout/auth/auth.component';
-import { NavigationComponent } from './theme/layout/admin/navigation/navigation.component';
-import { NavContentComponent } from './theme/layout/admin/navigation/nav-content/nav-content.component';
-import { NavGroupComponent } from './theme/layout/admin/navigation/nav-content/nav-group/nav-group.component';
-import { NavCollapseComponent } from './theme/layout/admin/navigation/nav-content/nav-collapse/nav-collapse.component';
-import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/nav-item/nav-item.component';
-import { NavBarComponent } from './theme/layout/admin/nav-bar/nav-bar.component';
-import { NavLeftComponent } from './theme/layout/admin/nav-bar/nav-left/nav-left.component';
-import { NavSearchComponent } from './theme/layout/admin/nav-bar/nav-left/nav-search/nav-search.component';
-import { NavRightComponent } from './theme/layout/admin/nav-bar/nav-right/nav-right.component';
-import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
-
-import { ToggleFullScreenDirective } from './theme/shared/full-screen/toggle-full-screen';
-
-/* Menu Items */
-import { NavigationItem } from './theme/layout/admin/navigation/navigation';
-import { NgbButtonsModule, NgbDropdownModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { UserServiceService } from './services/user-service.service';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserServiceService } from './http-services/user-service.service';
+import { UserDetailsComponent } from './componets/user-details/user-details.component';
+import { SigninComponent } from './componets/auth/signin/signin.component';
+
+import { SignupComponent } from './componets/auth/signup/signup.component';
+import { ResetPassowrdComponent } from './componets/auth/reset-passowrd/reset-passowrd.component';
+
+import { HomeComponent } from './componets/home/home.component';
+import { SharedComponent } from './componets/shared/shared.component';
+import { HeaderNavComponent } from './componets/nav/header-nav/header-nav.component';
+import { FooterNavComponent } from './componets/nav/footer-nav/footer-nav.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    AuthComponent,
-    NavigationComponent,
-    NavContentComponent,
-    NavGroupComponent,
-    NavCollapseComponent,
-    NavItemComponent,
-    NavBarComponent,
-    NavLeftComponent,
-    NavSearchComponent,
-    NavRightComponent,
-    ConfigurationComponent,
-    ToggleFullScreenDirective,
-    UserDetailsComponent
+    UserDetailsComponent,
+    SigninComponent,
+    SignupComponent,
+    ResetPassowrdComponent,
+    HomeComponent,
+    SharedComponent,
+    HeaderNavComponent,
+    FooterNavComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbButtonsModule,
-    NgbTabsetModule
+    HttpClientModule
   ],
-  providers: [NavigationItem,UserServiceService],
+  providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
