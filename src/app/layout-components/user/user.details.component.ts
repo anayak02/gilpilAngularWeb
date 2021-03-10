@@ -1,10 +1,10 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { UserServiceService } from '../services/user-service.service';
+import { UserServiceService } from '../../http-services/user-http-service/user-service.service';
 
 @Component({
   selector: 'app-user-details',
-  templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+  templateUrl: './user.details.component.html',
+  styleUrls: ['./user.details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
 

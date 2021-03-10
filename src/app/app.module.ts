@@ -5,15 +5,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './layout-components/login/login.component';
+import { SignupComponent } from './layout-components/signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MaterialModule } from './material.module';
 import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { UserDetailsComponent } from './user-details/user-details.component';
+
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { LayoutComponentsComponent } from './layout-components/layout-components.component';
+import { HomeComponent } from './layout-components/home/home.component';
+import { UserDetailsComponent } from './layout-components/user/user.component';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     LoginComponent,
     SignupComponent,
     WelcomeComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LayoutComponentsComponent,
+    HomeComponent
   ],
   imports: [
     
