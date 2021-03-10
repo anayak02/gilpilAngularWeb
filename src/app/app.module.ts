@@ -1,42 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { MaterialModule } from './material.module';
+import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { UserServiceService } from './http-services/user-service.service';
-import { UserDetailsComponent } from './componets/user-details/user-details.component';
-import { SigninComponent } from './componets/auth/signin/signin.component';
 
-import { SignupComponent } from './componets/auth/signup/signup.component';
-import { ResetPassowrdComponent } from './componets/auth/reset-passowrd/reset-passowrd.component';
-
-import { HomeComponent } from './componets/home/home.component';
-import { SharedComponent } from './componets/shared/shared.component';
-import { HeaderNavComponent } from './componets/nav/header-nav/header-nav.component';
-import { FooterNavComponent } from './componets/nav/footer-nav/footer-nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDetailsComponent,
-    SigninComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
     SignupComponent,
-    ResetPassowrdComponent,
-    HomeComponent,
-    SharedComponent,
-    HeaderNavComponent,
-    FooterNavComponent
-    
+    WelcomeComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    MaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    HttpClientModule,
+    
+    
   ],
-  providers: [UserServiceService],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
