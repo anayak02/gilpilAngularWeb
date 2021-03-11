@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { SignupService } from 'src/app/http-services/signup-http-service/signup.service';
+import { SignupService } from 'src/app/http-services/signup/signup.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { SignupService } from 'src/app/http-services/signup-http-service/signup.
 export class SignUpComponent implements OnInit {
   maxDate;
   errorMessage:any;
-  constructor(private signupserviceService:SignupService) { }
+  constructor(private signupService : SignupService) { }
 
   ngOnInit() {
     this.maxDate = new Date();
@@ -18,10 +19,15 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    alert(">");
-     this.signupserviceService.registerUser(form.value).subscribe(
+    console.log("form email ="+form.value.email);
+    console.log("form passowrd="+form.value.password);
+    console.log("form mobileNumber ="+form.value.mobileNumber);
+    console.log("form dob ="+form.value.dob);
+    console.log("form agree ="+form.value.agree);
+     this.signupService.registerUser(form.value).subscribe(
        (data:any)=>{
-       console.log("user register statur >",data);
+
+       console.log("user register responseMessage >",data.responseMessage);
 
        },
        error =>{
