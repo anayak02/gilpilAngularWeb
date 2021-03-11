@@ -27,12 +27,13 @@ export class SignUpComponent implements OnInit {
      this.signupService.registerUser(form.value).subscribe(
        (data:any)=>{
 
-       console.log("user register responseMessage >",data.responseMessage);
+       console.log("user register responseMessage >",data);
+       
 
        },
        error =>{
-         let errorObj =error['error'];
-         this.errorMessage=errorObj['responseMessage'];
+         
+         this.errorMessage=error['error'];
        }
      );
   }

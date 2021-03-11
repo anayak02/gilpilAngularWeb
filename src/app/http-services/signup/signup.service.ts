@@ -7,11 +7,11 @@ import { environment } from 'src/environments/environment';
 })
 export class SignupService {
 
-  apiURL = environment.apiUrl+'/app/user';
+  apiURL = environment.apiUrl+"/app";
 
   constructor(private httpClient:HttpClient) { }
 
   registerUser(formData:any){
-     return this.httpClient.post(`${this.apiURL}/register}`,formData);
+     return this.httpClient.post(this.apiURL+"/signup",formData);
   }
 }
