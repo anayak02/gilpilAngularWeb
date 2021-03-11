@@ -5,8 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './layout-components/login/login.component';
-import { SignupComponent } from './layout-components/signup/signup.component';
+
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MaterialModule } from './material.module';
 import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-module';
@@ -17,13 +16,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LayoutComponentsComponent } from './layout-components/layout-components.component';
 import { HomeComponent } from './layout-components/home/home.component';
 import { UserDetailsComponent } from './layout-components/user/user.component';
+import { SignInComponent } from './layout-components/signin/signin.component';
+import { SignUpComponent } from './layout-components/signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
+    SignInComponent,
+    SignUpComponent,
     WelcomeComponent,
     UserDetailsComponent,
     LayoutComponentsComponent,

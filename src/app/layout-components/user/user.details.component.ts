@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { UserServiceService } from '../../http-services/user-http-service/user-service.service';
+import { UserService } from '../../http-services/user-http-service/user.service';
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +8,7 @@ import { UserServiceService } from '../../http-services/user-http-service/user-s
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private userService:UserServiceService) {
+  constructor(private userService:UserService) {
 
    }
   usersList:Array<any>=[]; 

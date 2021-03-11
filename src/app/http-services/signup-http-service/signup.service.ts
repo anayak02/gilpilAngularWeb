@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SignupserviceService {
+export class SignupService {
 
   private baseUrl=environment.apiUrl+'/gilpilservice/api';
 

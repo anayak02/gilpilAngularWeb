@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { SignupserviceService } from 'src/app/http-services/signup-http-service/signupservice.service';
+import { SignupService } from 'src/app/http-services/signup-http-service/signup.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   maxDate;
   errorMessage:any;
-  constructor(private signupserviceService:SignupserviceService) { }
+  constructor(private signupserviceService:SignupService) { }
 
   ngOnInit() {
     this.maxDate = new Date();
@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    alert(">");
      this.signupserviceService.registerUser(form.value).subscribe(
        (data:any)=>{
        console.log("user register statur >",data);
