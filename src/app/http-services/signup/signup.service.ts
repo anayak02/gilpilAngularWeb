@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class SignupService {
 
-  apiURL = environment.apiUrl+"/app";
+  apiURL = environment.apiUrl+"/app/user";
 
   constructor(private httpClient:HttpClient) { }
 

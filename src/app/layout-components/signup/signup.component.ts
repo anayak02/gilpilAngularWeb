@@ -27,8 +27,8 @@ export class SignUpComponent implements OnInit {
      this.signupService.registerUser(form.value).subscribe(
        (data:any)=>{
 
-       console.log("user register responseMessage >",data);
-       
+        console.log("user register responseMessage >",data.rows);
+        alert(data.res);
 
        },
        error =>{
