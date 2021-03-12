@@ -26,5 +26,5 @@ When you think your git is messed up, you can use this command to do everything 
 
 git rm -r --cached .
 git add .
-git commit -am 'git cache cleared'
+git commit -m 'git cache cleared'
 git push
