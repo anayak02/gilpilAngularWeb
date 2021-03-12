@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignupService } from 'src/app/http-services/signup/signup.service';
 
 
@@ -11,7 +12,7 @@ import { SignupService } from 'src/app/http-services/signup/signup.service';
 export class SignUpComponent implements OnInit {
   maxDate;
   errorMessage:any;
-  constructor(private signupService : SignupService) { }
+  constructor(private signupService : SignupService,private router: Router) { }
 
   ngOnInit() {
     this.maxDate = new Date();
@@ -27,8 +28,12 @@ export class SignUpComponent implements OnInit {
      this.signupService.registerUser(form.value).subscribe(
        (data:any)=>{
 
-        console.log("user register responseMessage >",data.rows);
-        alert(data.res);
+        console.log("user register responseMessage >",data.result);
+
+        if(data.result === "success"){
+         this.router.navigate(['/user']);
+        }
+        
 
        },
        error =>{
