@@ -20,11 +20,11 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log("form email ="+form.value.email);
-    console.log("form passowrd="+form.value.password);
-    console.log("form mobileNumber ="+form.value.mobileNumber);
-    console.log("form dob ="+form.value.dob);
-    console.log("form agree ="+form.value.agree);
+    // console.log("form email ="+form.value.email);
+    // console.log("form passowrd="+form.value.password);
+    // console.log("form mobileNumber ="+form.value.mobileNumber);
+    // console.log("form dob ="+form.value.dob);
+    // console.log("form agree ="+form.value.agree);
      this.signupService.registerUser(form.value).subscribe(
        (data:any)=>{
 
