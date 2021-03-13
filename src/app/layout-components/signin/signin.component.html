@@ -1,7 +1,7 @@
 
 <mat-card>
 
-<form #f="ngForm" action="" (submit)="signin(f)" autocomplete="off" method="POST">
+<form #f="ngForm"  (submit)="signin(f)" autocomplete="off" method="POST">
   
   <label>Email</label>
   <input type="email"  name="username" placeholder="Email" [(ngModel)]="username" required>
