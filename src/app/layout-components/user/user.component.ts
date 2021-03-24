@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { UserService } from 'src/app/http-services/user/user.service';
 
 
@@ -9,24 +10,34 @@ import { UserService } from 'src/app/http-services/user/user.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService,
+    private ngxSpinnerService:NgxSpinnerService) {
 
    }
   usersList:Array<any>=[]; 
 
-  name:string="arjun";
+  
 
   ngOnInit() {
-    this.getAllUserDetails();
+    
+     this.getAllUserDetails();
+    
+   
   }
 
   getAllUserDetails(){
 
-    this.userService.getAllUserDetails().subscribe((data:any)=>{
+    this.ngxSpinnerService.show();
 
-      this.usersList = Array.from(data.rows);
-      console.log(this.usersList);
-    })
+    this.userService.getAllUserDetails().subscribe( (data:any)=>{
+        this.usersList = Array.from(data.rows);
+        console.log(this.usersList);
+        this.ngxSpinnerService.hide();
+    },
+    error=>{
+      this.ngxSpinnerService.hide();
+    }
+    )
   }
 
 }

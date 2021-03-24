@@ -18,7 +18,7 @@ import { HomeComponent } from './layout-components/home/home.component';
 import { UserDetailsComponent } from './layout-components/user/user.component';
 import { SignInComponent } from './layout-components/signin/signin.component';
 import { SignUpComponent } from './layout-components/signup/signup.component';
-
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { SignUpComponent } from './layout-components/signup/signup.component';
     UserDetailsComponent,
     LayoutComponentsComponent,
     HomeComponent
+    
   ],
   imports: [
     
@@ -39,10 +40,10 @@ import { SignUpComponent } from './layout-components/signup/signup.component';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    
+    NgxSpinnerModule
     
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},NgxSpinnerService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
