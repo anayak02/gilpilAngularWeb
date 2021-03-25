@@ -70,14 +70,14 @@ export class UserDetailsComponent implements OnInit {
 
     getAllUserDetails(){
 
-        // this.ngxSpinnerService.show();
+      this.ngxSpinnerService.show();
                   
       this.userService.getAllUserDetails().subscribe( (data:any)=>{
         this.rowData = Array.from(data.rows);
-        // this.ngxSpinnerService.hide();
+        this.ngxSpinnerService.hide();
         },
         error=>{
-            // this.ngxSpinnerService.hide();
+            this.ngxSpinnerService.hide();
           }
           )
       }         
