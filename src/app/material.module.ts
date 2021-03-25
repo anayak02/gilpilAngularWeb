@@ -5,6 +5,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatTableModule} from '@angular/material/table';
 import {
   
     MatFormFieldModule,
@@ -29,7 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTableModule
         
     ],
     exports:[
@@ -45,7 +47,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTableModule
         
     ]
 })

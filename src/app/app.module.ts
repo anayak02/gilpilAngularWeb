@@ -19,6 +19,7 @@ import { UserDetailsComponent } from './layout-components/user/user.component';
 import { SignInComponent } from './layout-components/signin/signin.component';
 import { SignUpComponent } from './layout-components/signup/signup.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule
-    
+    NgxSpinnerModule,
+    AgGridModule.withComponents([])
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},NgxSpinnerService],
   bootstrap: [AppComponent],
