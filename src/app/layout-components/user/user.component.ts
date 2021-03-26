@@ -1,4 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { Component, LOCALE_ID,Inject, OnInit, Output } from '@angular/core';
+import { inject } from '@angular/core/testing';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { UserService } from 'src/app/http-services/user/user.service';
 
@@ -21,7 +23,7 @@ export class UserDetailsComponent implements OnInit {
   
   
   constructor(private userService:UserService,
-    private ngxSpinnerService:NgxSpinnerService) {    
+    private ngxSpinnerService:NgxSpinnerService,@Inject(LOCALE_ID) private locale:string) {    
   
    }
   
@@ -33,14 +35,26 @@ export class UserDetailsComponent implements OnInit {
 
   
   columnDefs = [
-    { field: 'login_user_id',headerName:'Login ID',sortable:true ,filter:true},
+    {filed:'',headerName:'SR.No',sortable:true,
+      valueGetter:function(params:any){
+        return params.node.rowIndex +1;
+      },filter:false
+    },
+    { field: 'login_user_id',headerName:'Login ID',sortable:true ,filter: true},
     { field: 'password',headerName:'Password',sortable:true ,filter:true},
     { field: 'first_name',headerName:'First Name',sortable:true ,filter:true},
     { field: 'last_name',headerName:'Last Name',sortable:true ,filter:true},
     { field: 'email',headerName:'Email' ,sortable:true,filter:true},
     { field: 'mobile_number',headerName:'Mobile Number',sortable:true ,filter:true},
     { field: 'date_of_birth',headerName:'Date Of Birth' ,sortable:true ,filter:true},
-    { field: 'created_date',headerName:'Created Date',sortable:true ,filter:true}
+    { field: 'created_date',headerName:'Created Date',sortable:true ,filter:true,
+        cellRenderer:(data:{value:string | number | Date ;})=>{
+      
+          return formatDate(data.value , 'dd-MM-yyyy - hh:mm a',this.locale);
+
+        }
+        
+     }
     
     ];
 
@@ -55,6 +69,7 @@ export class UserDetailsComponent implements OnInit {
         filter: true,
         flex: 1,
         minWidth: 100,
+        floatingFilter: true,
       },
       pagination: true,
       
