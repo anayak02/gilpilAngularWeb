@@ -66,7 +66,12 @@ export class UserDetailsComponent implements OnInit {
       this.getAllUserDetails();
      }
       
-  
+    onPageSizeChanged(){
+      var comp = document.getElementById('page-size');
+      var pageValue = comp['value'];
+      this.gridApi.paginationSetPageSize(Number(pageValue));
+
+    }  
 
     getAllUserDetails(){
 
@@ -88,11 +93,6 @@ export class UserDetailsComponent implements OnInit {
 
   
   
-// onPageSizeChanged(){
-//   var comp = document.getElementById('page-size');
-//   var pageValue = comp['value'];
-//   this.gridApi.paginationPageSize(Number(pageValue));
 
-// }
 
 
