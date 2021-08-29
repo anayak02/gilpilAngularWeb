@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-modu
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LayoutComponentsComponent } from './layout-components/layout-components.component';
 import { HomeComponent } from './layout-components/home/home.component';
 import { UserDetailsComponent } from './layout-components/user/user.component';
@@ -20,6 +20,7 @@ import { SignInComponent } from './layout-components/signin/signin.component';
 import { SignUpComponent } from './layout-components/signup/signup.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AgGridModule } from 'ag-grid-angular';
     WelcomeComponent,
     UserDetailsComponent,
     LayoutComponentsComponent,
-    HomeComponent
+    HomeComponent,
     
   ],
   imports: [
@@ -42,9 +43,11 @@ import { AgGridModule } from 'ag-grid-angular';
     FormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    AgGridModule.withComponents([])
+    ReactiveFormsModule,
+    AgGridModule.withComponents([]),
+    
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},NgxSpinnerService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},NgxSpinnerService,DatePipe],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

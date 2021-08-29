@@ -20,11 +20,11 @@ export class UserDetailsComponent implements OnInit {
   private loadingTemplate;
   private overlayLoadingTemplate = '<span class="ag-overlay-loading-center">Loading...</span>';
   private overlayNoRowsTemplate = '<span style="padding: 10px; border: 2px solid #444; background: lightgoldenrodyellow;">No Data Found !!!</span>';
-  
+  private rowSelection;
   
   constructor(private userService:UserService,
     private ngxSpinnerService:NgxSpinnerService,@Inject(LOCALE_ID) private locale:string) {    
-  
+    this.rowSelection ='single';
    }
   
 
@@ -33,9 +33,15 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelectionChanged() {
+    var selectedRows = this.gridApi.getSelectedRows();
+    document.querySelector('#selectedRows').innerHTML =
+      selectedRows.length === 1 ? selectedRows[0].login_user_id : '';
+  }
+
   
   columnDefs = [
-    {filed:'',headerName:'SR.No',sortable:true,
+    {filed:'',headerName:'SR.No',sortable:true,hide:true,
       valueGetter:function(params:any){
         return params.node.rowIndex +1;
       },filter:false
@@ -60,7 +66,7 @@ export class UserDetailsComponent implements OnInit {
 
     gridOptions = {
       defaultColDef: {
-        editable: false,
+        editable: true,
         enableRowGroup: true,
         enablePivot: true,
         enableValue: true,
@@ -73,6 +79,7 @@ export class UserDetailsComponent implements OnInit {
       },
       pagination: true,
       
+      // this.rowSelection = 'single'      
     };
    
     onGridReady(params){
@@ -102,6 +109,11 @@ export class UserDetailsComponent implements OnInit {
           )
       }         
 
+
+      save(){
+       
+        console.log(">", this.gridApi.api.get.getSelectedRows());
+      }
 
   }
 

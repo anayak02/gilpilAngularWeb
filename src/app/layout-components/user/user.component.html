@@ -9,7 +9,11 @@
       <option value="1000">1000</option>
      </select>
  </mat-card>
- 
+ <input type="button" value="Save" (click)="save()">
+ <div class="example-header">
+    Selection:
+    <span id="selectedRows"></span>
+  </div>
  <ag-grid-angular  
     style="width: 100%; height: 500px;"
     class="ag-theme-alpine"
@@ -21,6 +25,8 @@
     (gridReady)="onGridReady($event)"
     [overlayLoadingTemplate]="overlayLoadingTemplate"
     [overlayNoRowsTemplate]="overlayNoRowsTemplate"
-    
+    (selectionChanged)="onSelectionChanged($event)"
+    [rowSelection]="rowSelection"
 >
 </ag-grid-angular>
+

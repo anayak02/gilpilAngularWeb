@@ -6,6 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 import {
   
     MatFormFieldModule,
@@ -15,6 +16,7 @@ import {
     MatCheckboxModule
   } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
   
 @NgModule({
     imports:[
@@ -31,7 +33,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatDatepickerModule,
         MatNativeDateModule,
         MatCheckboxModule,
-        MatTableModule
+        MatTableModule,
+        MatSelectModule,
+        NgxMatSelectSearchModule 
         
     ],
     exports:[
@@ -48,7 +52,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatDatepickerModule,
         MatNativeDateModule,
         MatCheckboxModule,
-        MatTableModule
+        MatTableModule,
+        MatSelectModule,
+        NgxMatSelectSearchModule
         
     ]
 })
