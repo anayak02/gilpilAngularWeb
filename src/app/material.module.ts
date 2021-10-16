@@ -6,18 +6,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select';
-import {
-  
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCheckboxModule
-  } from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-  
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+
 @NgModule({
     imports:[
         MatButtonModule,
@@ -34,9 +35,13 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
         MatNativeDateModule,
         MatCheckboxModule,
         MatTableModule,
+        FlexLayoutModule,
         MatSelectModule,
-        NgxMatSelectSearchModule 
-        
+        MatChipsModule,
+        MatDividerModule,
+        MatRadioModule,
+        MatAutocompleteModule,
+        MatDialogModule
     ],
     exports:[
         MatButtonModule,
@@ -53,9 +58,13 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
         MatNativeDateModule,
         MatCheckboxModule,
         MatTableModule,
+        FlexLayoutModule,
         MatSelectModule,
-        NgxMatSelectSearchModule
-        
+        MatChipsModule,
+        MatDividerModule,
+        MatRadioModule,
+        MatAutocompleteModule,
+      
     ]
 })
 export class MaterialModule {

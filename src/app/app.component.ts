@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { ResponsiveService } from './responsive.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ResponsiveService } from './responsive.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'gilpilweb';
   
   constructor(private responsiveService:ResponsiveService){}
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
    }
 
    /** this method is checking the device width for responsive */
-  onResize(){
+  onResize(event){
     this.responsiveService.checkWidth();
   }
 

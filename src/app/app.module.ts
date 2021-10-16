@@ -1,54 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { WelcomeComponent } from './welcome/welcome.component';
 import { MaterialModule } from './material.module';
-import { MatSidenavModule } from '@angular/material/sidenav/typings/sidenav-module';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { LayoutComponentsComponent } from './layout-components/layout-components.component';
-import { HomeComponent } from './layout-components/home/home.component';
-import { UserDetailsComponent } from './layout-components/user/user.component';
-import { SignInComponent } from './layout-components/signin/signin.component';
-import { SignUpComponent } from './layout-components/signup/signup.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
 
-
 @NgModule({
   declarations: [
-    AppComponent,
-    SignInComponent,
-    SignUpComponent,
-    WelcomeComponent,
-    UserDetailsComponent,
-    LayoutComponentsComponent,
-    HomeComponent,
-    
+    AppComponent
   ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    FormsModule,
-    HttpClientModule,
-    NgxSpinnerModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    NgxSpinnerModule,
+    MaterialModule,
+    BrowserAnimationsModule,
     AgGridModule.withComponents([]),
-    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},NgxSpinnerService,DatePipe],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
