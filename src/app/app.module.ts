@@ -10,12 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
-import { SignInComponent } from './layout-components/signin/signin.component';
-import { SignUpComponent } from './layout-components/signup/signup.component';
+import { SignInComponent } from './components/signin/signin.component';
+import { SignUpComponent } from './components/signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { UserDetailsComponent } from './layout-components/user/user.component';
-import { LayoutComponentsComponent } from './layout-components/layout-components.component';
-import { HomeComponent } from './layout-components/home/home.component';
+import { UserDetailsComponent } from './components/user/user.component';
+import { LayoutComponentsComponent } from './components/layout-components.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [

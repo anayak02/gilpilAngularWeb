@@ -2,7 +2,7 @@ import { formatDate } from '@angular/common';
 import { Component, LOCALE_ID,Inject, OnInit, Output } from '@angular/core';
 import { inject } from '@angular/core/testing';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { UserService } from 'src/app/http-services/user/user.service';
+import { UserService } from 'src/app/http-services/user.service';
 
 
 @Component({
