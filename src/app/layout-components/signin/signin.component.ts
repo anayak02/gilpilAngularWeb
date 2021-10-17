@@ -11,6 +11,7 @@ export class SignInComponent implements OnInit {
   
   constructor(private singinService:SigninService) { }
   username:string;
+  password:string;
 
   ngOnInit() {
   }

@@ -12,15 +12,16 @@ import { UserService } from 'src/app/http-services/user/user.service';
 })
 export class UserDetailsComponent implements OnInit {
   
-  private rowData :Array<any>=[]; 
-  private paginationPageSize=10;
-  private gridApi;
-  private gridColumnApi;
-  private noRowsTemplate;
-  private loadingTemplate;
-  private overlayLoadingTemplate = '<span class="ag-overlay-loading-center">Loading...</span>';
-  private overlayNoRowsTemplate = '<span style="padding: 10px; border: 2px solid #444; background: lightgoldenrodyellow;">No Data Found !!!</span>';
-  private rowSelection;
+  public rowData :Array<any>=[]; 
+  public paginationPageSize=10;
+  public gridApi;
+  public gridColumnApi;
+  public noRowsTemplate;
+  public loadingTemplate;
+  public overlayLoadingTemplate = '<span class="ag-overlay-loading-center">Loading...</span>';
+  public overlayNoRowsTemplate = '<span style="padding: 10px; border: 2px solid #444; background: lightgoldenrodyellow;">No Data Found !!!</span>';
+  public  rowSelection;
+  public  autoGroupColumnDef:any;
   
   constructor(private userService:UserService,
     private ngxSpinnerService:NgxSpinnerService,@Inject(LOCALE_ID) private locale:string) {    
@@ -33,7 +34,7 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelectionChanged() {
+  onSelectionChanged(event) {
     var selectedRows = this.gridApi.getSelectedRows();
     document.querySelector('#selectedRows').innerHTML =
       selectedRows.length === 1 ? selectedRows[0].login_user_id : '';

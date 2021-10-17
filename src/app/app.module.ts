@@ -7,20 +7,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
+import { SignInComponent } from './layout-components/signin/signin.component';
+import { SignUpComponent } from './layout-components/signup/signup.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { UserDetailsComponent } from './layout-components/user/user.component';
+import { LayoutComponentsComponent } from './layout-components/layout-components.component';
+import { HomeComponent } from './layout-components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignInComponent,
+    SignUpComponent,
+    WelcomeComponent,
+    UserDetailsComponent,
+    LayoutComponentsComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
     NgxSpinnerModule,
     MaterialModule,
     BrowserAnimationsModule,
