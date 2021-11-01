@@ -10,18 +10,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
-import { SignInComponent } from './component/signin/signin.component';
-import { SignUpComponent } from './component/signup/signup.component';
-import { UserDetailsComponent } from './component/user/user.component';
-import { HomeComponent } from './component/home/home.component';
+import { UserDetailsComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './navigation/footer/footer.component';
+import { SignUpComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
+    LoginComponent,
     SignUpComponent,
     UserDetailsComponent,
     HomeComponent,
@@ -41,6 +42,7 @@ import { FooterComponent } from './footer/footer.component';
     NgxSpinnerModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     AgGridModule.withComponents([]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
