@@ -1,12 +1,23 @@
-<div id="header-wrap">
+<mat-toolbar id="header-wrap">
+      <div>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                  <mat-icon>menu</mat-icon>
+            </button>
+            <a routerLink="/">LOGO</a>
+      </div>
+      <div fxFlex fxLayout  fxLayoutGap="10px"  fxLayoutAlign="flex-end">
+            <a mat-fab routerLink="/"><mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon></a>
+            <a mat-fab routerLink="/user">User</a>
+            <a mat-fab routerLink="/login">Login</a>
+            <a mat-fab routerLink="/signup">SignUp</a>
+            <a mat-fab routerLink="/example">Logout</a>
+      </div>
+</mat-toolbar>
+            
+     
 
-      <a mat-fab routerLink="/"><mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon></a>
-      <a mat-fab routerLink="/user">User</a>
-      <a mat-fab routerLink="/login">Login</a>
-      <a mat-fab routerLink="/signup">SignUp</a>
-      <a mat-fab routerLink="/example">Logout</a>
 
-</div>
+
 
 
 

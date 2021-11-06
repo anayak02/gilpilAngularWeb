@@ -12,12 +12,12 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AgGridModule } from 'ag-grid-angular';
 import { UserDetailsComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { SignUpComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SignUpComponent,
     UserDetailsComponent,
     HomeComponent,
-    LayoutComponent,
     HeaderComponent,
     FooterComponent,
+    WelcomeComponent,
     
   ],
   imports: [
