@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { ResponsiveService } from './responsive.service';
-
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.drawWaterMark();
+   
    }
 
    /** this method is checking the device width for responsive */

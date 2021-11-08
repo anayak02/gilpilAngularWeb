@@ -18,6 +18,8 @@ import { SignUpComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { TestMatTableComponent } from './test-mat-table/test-mat-table.component';
+import { TestNgxDatatableComponent } from './test-ngx-datatable/test-ngx-datatable.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HeaderComponent,
     FooterComponent,
     WelcomeComponent,
+    TestMatTableComponent,
+    TestNgxDatatableComponent,
     
   ],
   imports: [

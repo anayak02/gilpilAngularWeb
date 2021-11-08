@@ -18,6 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
     imports:[
@@ -41,7 +42,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatDividerModule,
         MatRadioModule,
         MatAutocompleteModule,
-        MatDialogModule
+        MatDialogModule,
+        MatSortModule 
     ],
     exports:[
         MatButtonModule,
@@ -64,7 +66,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatDividerModule,
         MatRadioModule,
         MatAutocompleteModule,
-      
+        MatSortModule, 
     ]
 })
 export class MaterialModule {
