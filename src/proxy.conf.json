@@ -1,5 +1,5 @@
 {
-    "/gilpilservice/api":{
+    "/gpservice/api":{
       "target":"http://localhost:8080",
       "source":false ,
       "changeOrigin":true,

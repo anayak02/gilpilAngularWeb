@@ -23,6 +23,11 @@
       <mat-hint>Please enter your password.</mat-hint>
       <mat-error>Missing password.</mat-error>
     </mat-form-field>
+
+      <img id="captcha_id" name="imgCaptcha" crossorigin="anonymous">
+      <a href="javascript:;" tabindex="3" title="Refresh captcha" (click)="refreshCaptcha()">
+        <img class="image" src="assets/img/refresh.png">
+      </a>
     <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
   </form>
 </section>
